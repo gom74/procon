@@ -15,9 +15,13 @@ int main() {
 
     int idx = 0;
     while (true) {
+        if (idx > S.size()) {
+            cout << "NO" << endl;
+            exit(0);
+        }
         for (int i = 0; i < 4; ++i) {
             string &t = T.at(i);
-            if (S.substr(idx, 3) == t.substr(0, 3)) {
+            if (S.substr(idx, t.size()) == t) {
                 idx += t.size();
                 break;
             }
